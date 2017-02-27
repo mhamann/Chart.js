@@ -175,7 +175,9 @@ module.exports = function(Chart) {
 
 		var resizer = node._chartjs.resizer;
 		if (resizer) {
-			resizer.parentNode.removeChild(resizer);
+			if (resizer.parentNode) { 
+				resizer.parentNode.removeChild(resizer);
+			}
 			node._chartjs.resizer = null;
 		}
 
